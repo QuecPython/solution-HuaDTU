@@ -1,0 +1,35 @@
+{
+    "system_config": {
+        "cloud": "tcp"
+    },
+    "mqtt_private_cloud_config": {
+        "server": "mq.tongxinmao.com",
+        "port": 18830,
+        "client_id": "txm_1682300809",
+        "user": "",
+        "password": "",
+        "clean_session": true,
+        "qos": 0,
+        "keepalive": 60,
+        "subscribe": {"down": "/public/TEST/down"},
+        "publish": {"up":  "/public/TEST/up"}
+    },
+    "socket_private_cloud_config": {
+        "domain": "112.31.84.164",
+        "port": 8305,
+        "timeout": 5,
+        "keep_alive": 5
+    },
+    "uart_config": {
+        "port": 2,
+        "baudrate": 115200,
+        "bytesize": 8,
+        "parity": 0,
+        "stopbits": 1,
+        "flowctl": 0,
+        "rs485_config": {
+        	"gpio_num": 28,
+            "direction": 0
+        }
+    }
+}
