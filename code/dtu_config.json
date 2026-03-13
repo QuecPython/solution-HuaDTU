@@ -31,5 +31,11 @@
         	"gpio_num": 28,
             "direction": 0
         }
+    },
+    "network_config": {                     
+        "apn": "",            
+        "username": "",                      
+        "password": "",                      
+        "auth_type": 0                        
     }
 }
