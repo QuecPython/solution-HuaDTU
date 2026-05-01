@@ -1,4 +1,4 @@
-# QuecPython 4G DTU Quick Start \(English\)
+# QuecPython 4G DTU Quick Start 
 
 ## Hardware Preparation
 
@@ -30,7 +30,7 @@
 
 Follow the diagram below for hardware connection:
 
-![](./images/DTU_wires_connection.png)
+![](./images/DTU_wires_connection_en.png)
 
 ① Connect the rubber stick antenna\.
 ② Insert the Nano Sim card\.
