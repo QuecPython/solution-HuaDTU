@@ -33,9 +33,13 @@ Follow the diagram below for hardware connection:
 ![](./images/DTU_wires_connection_en.png)
 
 ① Connect the rubber stick antenna\.
+
 ② Insert the Nano Sim card\.
+
 ③ Connect to the computer using the mini USB data cable\.
+
 ④ Connect to the computer using the USB to TTL module\. TX \(DTU development board\) connects to RX \(USB to TTL module\); RX \(DTU development board\) connects to TX \(USB to TTL module\); GND \(DTU development board\) connects to GND \(USB to TTL module\) for common ground\. \(⚠ If using RS485 interface, connect wire A to wire A and wire B to wire B on both ends\.\)
+
 ⑤ The development board adopts 9\~36 V wide voltage power supply, pay attention to positive and negative poles\.
 
 ## Device Development
@@ -148,22 +152,32 @@ After downloading and installing the **QPYCom** tool, use this tool to download 
 > 
 
 Download steps:
+
 ① Select the COM port with **REPL**\. \(⚠ This COM port is the QuecPython interactive port, which can be used to execute python code to interact with the module\. Script import is also implemented in this way\.\)
+
 ② Open the interactive port
+
 ③ Select the Download tab, and create a new project name\. \(The name is customizable\.\)
+
 ④ Right\-click the directory, use the **one\-click import** function, select and import the `code` folder in the DTU code repository\. \(⚠ The `usr` directory is the user storage space of the QuecPython module, generally used to store python script code to be executed\)\.
+
 ⑤ Click the download button to start downloading\.
 
 ![](./images/download_scripts.png)
 
 Run the main script
+
 ① Select the File tab
+
 ② Right\-click `_main.py`, and select to execute this file\.
 
 ![](./images/run_scripts.png)
 
+
+
 ⚠ This script is the main entry script of the project\.
-⚠ Manually running this script here is only for debugging convenience\. If this script is named `main\.py`, it will run automatically after the module is powered on\. The principle is that after the module is powered on, it will automatically run the `main\.py` script under `usr` by default\.
+
+⚠ Manually running this script here is only for debugging convenience\. If this script is named `main.py`, it will run automatically after the module is powered on\. The principle is that after the module is powered on, it will automatically run the `main.py` script under `usr` by default\.
 
 ### Business Debugging
 
