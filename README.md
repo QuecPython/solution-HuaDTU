@@ -92,6 +92,19 @@ In this experimental case, based on TCP private server data transparent transmis
 }
 ```
 
+- The `network_config` configuration item is the SIM card network configuration parameter\. By default, it is left empty, indicating that no related parameters are uploaded to the base station\. Generally, it can be left empty for public network phone cards, but IoT cards must configure SIM card related parameters\. The related parameters need to be confirmed with the card provider\.
+
+```python
+{
+    "network_config": {                     
+        "apn": "",     # Module APN parameter, needs to be confirmed with the operator. Empty means not uploaded by default    
+        "username": "",  # Module SIM card username parameter, needs to be confirmed with the operator. Empty means not uploaded by default                  
+        "password": "",  # Module SIM card password parameter, needs to be confirmed with the operator. Empty means not uploaded by default             
+        "auth_type": 0  # Authentication type, 0 means no authentication                      
+    }
+}
+```
+
 The complete configuration file template is as follows:
 
 ```json
@@ -128,6 +141,12 @@ The complete configuration file template is as follows:
         	"gpio_num": 28,
             "direction": 0
         }
+    },
+    "network_config": {                     
+        "apn": "",            
+        "username": "",                      
+        "password": "",                      
+        "auth_type": 0                        
     }
 }
 ```
@@ -141,6 +160,7 @@ Parameter description:
 - `socket_private_cloud_config`: TCP private cloud configuration\.
 
 - `uart_config`: Serial port parameter configuration\.
+- `network_config`: SIM card parameter configuration\.
 
 ### Script Import and Run
 
