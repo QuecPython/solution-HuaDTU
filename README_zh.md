@@ -83,6 +83,19 @@
 }
 ```
 
+-  `network_config` 配置项是SIM卡网络配置参数，默认留空，表示不上传相关参数到基站端，一般使用公网电话卡可以留空，物联网卡则必须设置SIM卡相关参数，相关参数需与卡商确认
+
+```python
+{
+    "network_config": {                     
+        "apn": "",     #模组APN参数，需要与运营商确认，留空则表示默认不上传    
+        "username": "",  #模组sim卡的用户名参数，需要与运营商确认，留空则表示默认不上传                  
+        "password": "",  # 模组sim卡的密码参数，需要与运营商确认，留空则表示默认不上传             
+        "auth_type": 0  #鉴权方式，0表示无鉴权                      
+    }
+}
+```
+
 完整配置文件模版如下：
 
 ```json
@@ -119,9 +132,16 @@
         	"gpio_num": 28,
             "direction": 0
         }
+    },
+    "network_config": {                     
+        "apn": "",            
+        "username": "",                      
+        "password": "",                      
+        "auth_type": 0                        
     }
 }
 ```
+
 
 参数说明：
 
@@ -129,6 +149,7 @@
 - `mqtt_private_cloud_config`: MQTT私有云配置。
 - `socket_private_cloud_config`: tcp私有云配置。
 - `uart_config`：串口参数配置。
+- `network_config`：SIM卡参数配置。
 
 ### 脚本导入并运行
 
@@ -175,4 +196,3 @@
 ![](./images/debugview.png)
 
 ⚠ 本案例中采用的是 TCP 回显服务器，所以 QCOM 上行数据，经过 DTU 透传至 TCP 服务器接收到之后会立即按原路径下行。
-

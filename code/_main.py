@@ -19,7 +19,7 @@ class Manager(object):
         self.dog_feed_timer.start(3000, 1, self.__feed)
         if sim.getStatus() != 1:
             raise ValueError("sim card not ready")
-        
+
         self.__config_apn()
 
         # 网络就绪
@@ -35,12 +35,15 @@ class Manager(object):
 
     def __config_apn(self):
 
-        usr_apn = self.dtu.config.get('apn', '')          # APN名称
-        usr_user = self.dtu.config.get('apn_user', '')    # 用户名，可选
-        usr_pwd = self.dtu.config.get('apn_password', '') # 密码，可选
+        usr_apn = self.dtu.config.get('network_config.apn', '')
+        print('apn is',usr_apn)          # APN名称
+        usr_user = self.dtu.config.get('network_config.username', '')
+        print("usr is",usr_user)   # 用户名，可选
+        usr_pwd = self.dtu.config.get('network_config.username', '')
+        print('pwd is',usr_pwd)# 密码，可选
 
         if usr_apn:
-            print("检测到用户APN配置，准备设置...")
+            print("检测到用户APN配置,准备设置...")
             profile_id = 1  # 通常使用第一路
             ip_type = 0     # 默认IPv4，可根据需要从配置读取
 
